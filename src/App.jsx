@@ -48,13 +48,23 @@ function App() {
           <div>
             {/** Title */}
             <div className="title">
-              <p style={{ fontSize: 25 }}>One Piece Myanmar Quizz</p>
+              <p
+                style={{
+                  fontSize: 25,
+                  textAlign: "center",
+                  fontWeight: "lighter",
+                }}
+              >
+                One Piece Myanmar Quizz
+              </p>
             </div>
             <hr style={{ height: 0.1 }}></hr>
             <div style={{ marginTop: 10 }}>
               {/** Question */}
               <div>
-                <p>အမေး : {Quizz[CurrentQuestion].Question}</p>
+                <p style={{ fontWeight: "lighter" }}>
+                  အမေး : {Quizz[CurrentQuestion].Question}
+                </p>
               </div>
               {/** Images */}
               <div>
@@ -72,6 +82,7 @@ function App() {
                       style={{
                         fontSize: 18,
                         textAlign: "center",
+                        fontWeight: "100",
                       }}
                     >
                       {quest.AnswerText}

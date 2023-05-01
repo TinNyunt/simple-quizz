@@ -70,10 +70,8 @@ function App() {
                   >
                     <p
                       style={{
-                        fontSize: 20,
-                        justifyContent: "center",
-                        display: "flex",
-                        lineHeight: 2,
+                        fontSize: 18,
+                        textAlign: "center",
                       }}
                     >
                       {quest.AnswerText}

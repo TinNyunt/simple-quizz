@@ -6,22 +6,36 @@ function App() {
   const [ShowScore, setshowScore] = useState(false);
   const [GoodChoice, setgoodChoice] = useState(0);
   const [BadChoice, setbadChoice] = useState(0);
+  const [Wrongcolor, setwrongColor] = useState(false);
+  const [Disabled, setDisabled] = useState(false);
 
   const clickhanlder = isCorrect => {
     if (isCorrect == true) {
       setgoodChoice(GoodChoice + 1);
+      setDisabled(true);
     }
     if (isCorrect == false) {
       setbadChoice(BadChoice + 1);
+      setwrongColor(true);
+      setDisabled(true);
+      setTimeout(() => {
+        setwrongColor(false);
+      }, 1500);
     }
     const nextQuest = CurrentQuestion + 1;
+
     setTimeout(() => {
       if (nextQuest < Quizz.length) {
         setcurrentQuestion(nextQuest);
       } else {
         setshowScore(true);
       }
-    }, 1000);
+      setDisabled(false);
+    }, 2000);
+  };
+
+  const refresh = () => {
+    window.location.reload(false);
   };
 
   return (
@@ -42,6 +56,9 @@ function App() {
               <p>
                 {BadChoice} / {Quizz.length}
               </p>
+            </div>
+            <div onClick={() => refresh()} className="refreshbtn">
+              <p>Restart</p>
             </div>
           </div>
         ) : (
@@ -75,8 +92,14 @@ function App() {
                 {Quizz[CurrentQuestion].AnswerOptions?.map(quest => (
                   <div
                     className="Answer"
-                    style={{ backgroundColor: quest.color }}
-                    onClick={() => clickhanlder(quest.isCorrect)}
+                    style={{
+                      backgroundColor: quest.color,
+                      borderColor: Wrongcolor
+                        ? quest.c_color
+                        : "rgb(159, 187, 196)",
+                    }}
+                    onClick={() => !Disabled && clickhanlder(quest.isCorrect)}
+                    aria-disabled={Disabled}
                   >
                     <p
                       style={{

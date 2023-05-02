@@ -24,7 +24,6 @@ body {
   backdrop-filter: blur(1.2px);
   -webkit-backdrop-filter: blur(1.2px);
 }
-
 .Image {
   border-radius: 5px;
   width: 500px;
@@ -39,13 +38,28 @@ body {
   transition: all 0.5s ease;
   padding: 10px;
   margin-bottom: 5px;
+  border: solid;
 }
 .Answer:hover {
   opacity: 0.5;
 }
+.refreshbtn {
+  padding: 10px;
+  background-color: blue;
+  margin-top: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.refreshbtn p {
+  font-size: 20px;
+}
+div .isdisabled {
+  pointer-events: none;
+  opacity: 0.7;
+}
 @media only screen and (max-width: 500px) {
   body {
-    background-color: rgb(121, 162, 175);
+    background-color: rgb(159, 187, 196);
   }
   .Container {
     width: 100%;

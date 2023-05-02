@@ -79,7 +79,7 @@ function App() {
             <div style={{ marginTop: 10 }}>
               {/** Question */}
               <div>
-                <p style={{ fontWeight: "lighter", fontSize: 25 }}>
+                <p style={{fontSize: 25 }}>
                   အမေး : {Quizz[CurrentQuestion].Question}
                 </p>
               </div>

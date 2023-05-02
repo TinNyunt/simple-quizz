@@ -80,7 +80,11 @@ function App() {
             <div style={{ marginTop: 10 }}>
               {/** Question */}
               <div>
+<<<<<<< HEAD
                 <p style={{ fontSize: 20, color: "black" }}>
+=======
+                <p style={{fontSize: 25 }}>
+>>>>>>> 4d434cb47a708ab5b677f3d4aecaabed3717d7d0
                   အမေး : {Quizz[CurrentQuestion].Question}
                 </p>
               </div>

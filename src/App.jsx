@@ -70,6 +70,7 @@ function App() {
                   fontSize: 25,
                   textAlign: "center",
                   fontWeight: "lighter",
+                  color: "black",
                 }}
               >
                 One Piece Myanmar Quizz
@@ -79,7 +80,7 @@ function App() {
             <div style={{ marginTop: 10 }}>
               {/** Question */}
               <div>
-                <p style={{ fontWeight: "lighter", fontSize: 20 }}>
+                <p style={{ fontSize: 20, color: "black" }}>
                   အမေး : {Quizz[CurrentQuestion].Question}
                 </p>
               </div>
@@ -105,7 +106,7 @@ function App() {
                       style={{
                         fontSize: 18,
                         textAlign: "center",
-                        fontWeight: "100",
+                        color: "black",
                       }}
                     >
                       {quest.AnswerText}
